@@ -1,11 +1,11 @@
 "use strict";
 
-var Name = '"Генератор защитного поля"';
-var Price = 1000;
+let itemName = 'Генератор защитного поля';
+let price = 1000;
 console.log(
-  "Выбран " + "" + Name + "," + " цена за штуку " + Price + "" + " кредитов"
+  `Выбран ${itemName}, цена за штуку ${price} кредитов`
 );
-Price = 2000;
+price = 2000;
 console.log(
-  "Выбран " + "" + Name + "," + " цена за штуку " + Price + "" + " кредитов"
+  `Выбран ${itemName}, цена за штуку ${price} кредитов`
 );
