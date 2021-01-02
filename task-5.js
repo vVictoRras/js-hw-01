@@ -1,6 +1,6 @@
 let countryName = prompt("Введите страну доставки товара", "");
 countryName =
-  countryName.charAt(0).toUpperCase() + countryName.slice(1).toLowerCase();
+  countryName.charAt(0).toUpperCase() + countryName.slice(1).toLowerCase(); // приводим название введенной страны к нормальному виду Xxxxx
 //console.log(countryName);
 let names = {
   name1: "Китай",
@@ -9,7 +9,12 @@ let names = {
   name4: "Индия",
   name5: "Ямайка",
 };
-let prices = { price1: 150, price2: 250, price3: 165, price4: 90, price: 130 };
+let prices = { 
+  price1: 150, 
+  price2: 250, 
+  price3: 165, 
+  price4: 90, 
+  price: 130 };
 switch (countryName) {
   case "Китай":
     alert(`Доставка в ${names.name1} будет стоить ${prices.price1} кредитов`);
