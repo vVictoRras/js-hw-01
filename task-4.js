@@ -1,25 +1,23 @@
-// Task_4. Очень сложно написано условие с 10 по 13 строку. 
-// Лучше разбить на несколько if()else{} и продумать вложенность 
-// (всередине if(){} тоже можно создавать вложенно и т.д.)
+// Task_4. Что будет если пользователь введет что-то такое?:  qweertrt
 
 // исправил.
 let credits = 35500;
 let pricePerDroid = 3000;
-let totalPrice;
-let ostatok;
-let countDroids = prompt("Какое количество дроидов вы хотите купить?", " ");
-if (countDroids == null) {
+let totalPrice = 0;
+let countDroids;
+let input = prompt(`Укажите количество дройдов `);
+let data = input || null;
+if (data) {
+  totalPrice = pricePerDroid * data;
+  countDroids = credits - totalPrice;
+}
+if (!data) {
   alert("Отменено пользователем!");
-} else {
-  totalPrice = countDroids * pricePerDroid;
-  ostatok = credits - totalPrice;
-  if (totalPrice < credits) {
-    alert(
-      `Вы купили ${countDroids} дроидов, на счету осталось ${ostatok} кредитов.`
-    );
-  } else if (totalPrice > credits) {
-    alert("Недостаточно средств на счету!");
-  } else {
-    alert("Отменено пользователем!");
-  }
+} else if (isNaN(data)) {
+  alert("Введенно не число!");
+} else if (countDroids >= 0) {
+  credits = countDroids;
+  alert(`Вы купили ${data} дроидов, на счету осталось ${credits} кредитов`);
+} else if (countDroids < 0) {
+  alert("Недостаточно средств на счету!");
 }
